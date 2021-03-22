@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SpaceTabLayout.iml" filepath="$PROJECT_DIR$/SpaceTabLayout.iml" />
-      <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/spacetablayout/spacetablayout.iml" filepath="$PROJECT_DIR$/spacetablayout/spacetablayout.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SpaceTabLayout.iml" filepath="$PROJECT_DIR$/.idea/modules/SpaceTabLayout.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/demo/SpaceTabLayout.demo.iml" filepath="$PROJECT_DIR$/.idea/modules/demo/SpaceTabLayout.demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/spacetablayout/SpaceTabLayout.spacetablayout.iml" filepath="$PROJECT_DIR$/.idea/modules/spacetablayout/SpaceTabLayout.spacetablayout.iml" />
     </modules>
   </component>
 </project>

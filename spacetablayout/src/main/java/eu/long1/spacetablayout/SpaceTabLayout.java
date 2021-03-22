@@ -25,17 +25,6 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.annotation.ColorInt;
-import android.support.annotation.DrawableRes;
-import android.support.annotation.LayoutRes;
-import android.support.annotation.StringRes;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.TabLayout;
-import android.support.design.widget.TabLayout.Tab;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -43,6 +32,18 @@ import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import androidx.annotation.ColorInt;
+import androidx.annotation.DrawableRes;
+import androidx.annotation.LayoutRes;
+import androidx.annotation.StringRes;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.viewpager.widget.ViewPager;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,11 +54,11 @@ public class SpaceTabLayout extends RelativeLayout {
 
     private TabLayout tabLayout;
 
-    private Tab tabOne;
-    private Tab tabTwo;
-    private Tab tabThree;
-    private Tab tabFour;
-    private Tab tabFive;
+    private TabLayout.Tab tabOne;
+    private TabLayout.Tab tabTwo;
+    private TabLayout.Tab tabThree;
+    private TabLayout.Tab tabFour;
+    private TabLayout.Tab tabFive;
 
     private RelativeLayout parentLayout;
     private RelativeLayout selectedTabLayout;
@@ -79,7 +80,7 @@ public class SpaceTabLayout extends RelativeLayout {
     private ImageView tabFourImageView;
     private ImageView tabFiveImageView;
 
-    private List<Tab> tabs = new ArrayList<>();
+    private List<TabLayout.Tab> tabs = new ArrayList<>();
     private List<Integer> tabSize = new ArrayList<>();
 
     private int numberOfTabs = 3;
@@ -319,7 +320,7 @@ public class SpaceTabLayout extends RelativeLayout {
 
             @Override
             public void onPageSelected(int position) {
-                for (Tab t : tabs) t.getCustomView().setAlpha(1);
+                for (TabLayout.Tab t : tabs) t.getCustomView().setAlpha(1);
                 tabs.get(position).getCustomView().setAlpha(0);
                 moveTab(tabSize, position);
                 currentPosition = position;
@@ -329,7 +330,7 @@ public class SpaceTabLayout extends RelativeLayout {
             public void onPageScrollStateChanged(int state) {
                 SCROLL_STATE_DRAGGING = state == ViewPager.SCROLL_STATE_DRAGGING;
                 if (state == ViewPager.SCROLL_STATE_SETTLING) {
-                    for (Tab t : tabs) t.getCustomView().setAlpha(1);
+                    for (TabLayout.Tab t : tabs) t.getCustomView().setAlpha(1);
                     tabs.get(currentPosition).getCustomView().setAlpha(0);
                     moveTab(tabSize, currentPosition);
                 }
